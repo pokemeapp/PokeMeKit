@@ -1,4 +1,10 @@
+os: osx
 language: swift
 osx_image: xcode9
 xcode_project: PokeMeKit.xcodeproj
 xcode_scheme: UnitTests
+xcode_sdk: iphonesimulator11.0
+before_install:
+  - brew update
+  - brew install carthage
+  - carthage update
