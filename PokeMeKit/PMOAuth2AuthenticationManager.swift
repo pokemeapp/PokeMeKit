@@ -7,10 +7,26 @@ import Foundation
 
 public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
 
+  private struct SuccessfulResponse: Codable {
+    var access_token: String
+    var token_type: String
+    var expires_in: Int?
+    var refresh_token: String?
+    var scope: String?
+  }
+
+  private struct UnsuccessfulResponse: Codable {
+    var error: String
+    var error_description: String?
+    var error_uri: String?
+  }
+
   private let baseURL: URL
   private let clientId: String
   private let clientSecret: String
   private let httpService: PMHttpService
+  private let decoder = JSONDecoder()
+
   public weak var delegate: PMAuthenticationManagerDelegate?
 
   private final let tokenEndpoint = "oauth/token"
@@ -32,7 +48,24 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     request.httpBody = passwordCredentialRequestBody(with: email, and: password)
     request.httpMethod = "POST"
 
+    let credentials = "\(clientId):\(clientSecret)"
+    let credentialsData = Data(bytes: [UInt8](credentials.utf8))
+    let base64credentials = credentialsData.base64EncodedString()
+
+    request.addValue("Basic \(base64credentials)", forHTTPHeaderField: "Authorization")
+
     httpService.request(request, { error, response, data in
+
+      guard let responseData = data else {
+        self.delegate?.authenticationManagerFailedToAuthenticate(self)
+        return
+      }
+
+      if let successfulResponse = try? decoder.decode(SuccessfulResponse.self, from: responseData) {
+        self.delegate?.authenticationManagerDidAuthenticate(self)
+      } else if let unsuccessfulResponse = try? decoder.decode(UnsuccessfulResponse.self, from: responseData) {
+        self.delegate?.authenticationManagerFailedToAuthenticate(self)
+      }
 
     });
 
