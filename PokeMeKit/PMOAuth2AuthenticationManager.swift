@@ -38,8 +38,6 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     self.httpService = httpService
   }
 
-  public private(set) var authenticated: Bool = false
-
   public func authenticate(email: String, password: String) {
 
     let tokenEndpointURL = baseURL.appendingPathComponent(tokenEndpoint)

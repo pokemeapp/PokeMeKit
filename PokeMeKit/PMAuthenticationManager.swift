@@ -15,8 +15,6 @@ public protocol PMAuthenticationManagerDelegate: class {
 
 public protocol PMAuthenticationManager {
 
-  var authenticated: Bool { get }
-
   func authenticate(email: String, password: String)
 
   func authenticate(request: URLRequest) -> URLRequest
