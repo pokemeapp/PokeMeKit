@@ -104,9 +104,8 @@
 			children = (
 				285DF1DA1F7127EB0029548A /* PokeMeKit.h */,
 				285DF1DB1F7127EB0029548A /* Info.plist */,
-				60464ED8D99E261B2C6EE18A /* PMAuthenticationManager.swift */,
-				604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */,
 				6046463E241F7E19C7E52611 /* PMHttpService.swift */,
+				28A8351F1F7C3FA400138ECC /* Authentication */,
 			);
 			path = PokeMeKit;
 			sourceTree = "<group>";
@@ -115,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				285DF1E71F7127EC0029548A /* Info.plist */,
-				604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */,
+				28A835201F7C3FEE00138ECC /* Authentication */,
 			);
 			path = PokeMeKitTests;
 			sourceTree = "<group>";
@@ -127,6 +126,23 @@
 				285DF1F21F71534B0029548A /* Nimble.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28A8351F1F7C3FA400138ECC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */,
+				60464ED8D99E261B2C6EE18A /* PMAuthenticationManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		28A835201F7C3FEE00138ECC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
