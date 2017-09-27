@@ -13,6 +13,8 @@
 		285DF1F51F71534D0029548A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285DF1F41F71534D0029548A /* Quick.framework */; };
 		285DF1F71F7159100029548A /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285DF1F41F71534D0029548A /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		285DF1F81F7159100029548A /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 285DF1F21F71534B0029548A /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		28A835241F7C436B00138ECC /* PMUserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A835231F7C436B00138ECC /* PMUserSpec.swift */; };
+		28A835261F7C45A900138ECC /* PMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A835251F7C45A900138ECC /* PMUser.swift */; };
 		60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */; };
 		604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */; };
 		6046488B73308322820E7005 /* PMHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046463E241F7E19C7E52611 /* PMHttpService.swift */; };
@@ -51,6 +53,8 @@
 		285DF1E71F7127EC0029548A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		285DF1F21F71534B0029548A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		285DF1F41F71534D0029548A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		28A835231F7C436B00138ECC /* PMUserSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMUserSpec.swift; sourceTree = "<group>"; };
+		28A835251F7C45A900138ECC /* PMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMUser.swift; sourceTree = "<group>"; };
 		604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAuthenticationManagerSpec.swift; sourceTree = "<group>"; };
 		6046463E241F7E19C7E52611 /* PMHttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMHttpService.swift; sourceTree = "<group>"; };
 		604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMOAuth2AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				285DF1DB1F7127EB0029548A /* Info.plist */,
 				6046463E241F7E19C7E52611 /* PMHttpService.swift */,
 				28A8351F1F7C3FA400138ECC /* Authentication */,
+				28A835211F7C432700138ECC /* Model */,
 			);
 			path = PokeMeKit;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				285DF1E71F7127EC0029548A /* Info.plist */,
 				28A835201F7C3FEE00138ECC /* Authentication */,
+				28A835221F7C434500138ECC /* Model */,
 			);
 			path = PokeMeKitTests;
 			sourceTree = "<group>";
@@ -143,6 +149,22 @@
 				604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		28A835211F7C432700138ECC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28A835251F7C45A900138ECC /* PMUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28A835221F7C434500138ECC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28A835231F7C436B00138ECC /* PMUserSpec.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,7 @@
 				60464EDB6519B7A252F6F255 /* PMAuthenticationManager.swift in Sources */,
 				604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */,
 				6046488B73308322820E7005 /* PMHttpService.swift in Sources */,
+				28A835261F7C45A900138ECC /* PMUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */,
+				28A835241F7C436B00138ECC /* PMUserSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
