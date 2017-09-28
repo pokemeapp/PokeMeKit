@@ -26,7 +26,6 @@ class PMUserSpec: QuickSpec {
     describe("PMUser") {
       
       it("should be decodable from JSON") {
-        
         let userJSON = """
           {
             "id": "1",
@@ -56,6 +55,39 @@ class PMUserSpec: QuickSpec {
         expect(user.friends).to(equal(friends))
       }
       
+      it("should be encodable to json") {
+        
+        let user = PMUser(username: username, email: email, firstName: firstName, lastName: lastName)
+        user.id = id
+        user.pokes = pokes
+        user.localReminders = localReminders
+        user.friends = friends
+        
+        let encoder = JSONEncoder()
+        
+        let dataFromUser = try! encoder.encode(user)
+        let stringFromUser = String(data: dataFromUser, encoding: .utf8)!
+        
+        let idRange = stringFromUser.range(of: "\"id\":\"\(id)\"")
+        let userNameRange = stringFromUser.range(of: "\"username\":\"\(username)\"")
+        let emailRange = stringFromUser.range(of: "\"email\":\"\(email)\"")
+        let firstNameRange = stringFromUser.range(of: "\"firstName\":\"\(firstName)\"")
+        let lastNameRange = stringFromUser.range(of: "\"lastName\":\"\(lastName)\"")
+        let pokesRange = stringFromUser.range(of: "\"pokes\":\(pokes)".replacingOccurrences(of: " ", with: ""))
+        let localRemindersRange = stringFromUser.range(of: "\"localReminders\":\(localReminders)".replacingOccurrences(of: " ", with: ""))
+        let friendsRange = stringFromUser.range(of: "\"friends\":\(friends)".replacingOccurrences(of: " ", with: ""))
+        
+        expect(idRange).toNot(beNil())
+        expect(userNameRange).toNot(beNil())
+        expect(emailRange).toNot(beNil())
+        expect(firstNameRange).toNot(beNil())
+        expect(lastNameRange).toNot(beNil())
+        expect(pokesRange).toNot(beNil())
+        expect(localRemindersRange).toNot(beNil())
+        expect(friendsRange).toNot(beNil())
+        
+      }
+      
     }
     
     describe("init(username:email:firstName:lastName:)") {
@@ -72,8 +104,6 @@ class PMUserSpec: QuickSpec {
       }
       
     }
-    
-    
     
   }
   

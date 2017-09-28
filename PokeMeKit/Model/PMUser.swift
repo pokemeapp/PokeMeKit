@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PMUser: Decodable {
+class PMUser: Codable {
   
   var id: String?
   var username: String
