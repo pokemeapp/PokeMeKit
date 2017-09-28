@@ -10,7 +10,7 @@ import Quick
 import Nimble
 @testable import PokeMeKit
 
-class UserSpec: QuickSpec {
+class PMUserSpec: QuickSpec {
   
   override func spec() {
     
