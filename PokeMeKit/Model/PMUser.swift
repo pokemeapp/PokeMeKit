@@ -15,9 +15,9 @@ class PMUser: Codable {
   var email: String
   var firstName: String
   var lastName: String
-  var pokes: [String]?
-  var localReminders: [String]?
-  var friends: [String]?
+  var pokes: [String] = []
+  var localReminders: [String] = []
+  var friends: [String] = []
   
   init(username: String, email: String, firstName: String, lastName: String) {
     
