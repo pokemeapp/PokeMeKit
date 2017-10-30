@@ -39,7 +39,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
       }
 
       context("given a username and a password") {
-        class MockHttpService: PMHttpService {
+        class MockHttpService: PMHTTPService {
 
           var lastRequest: URLRequest?
 
@@ -90,7 +90,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
       context("on valid response") {
         it("should call the success delegate method") {
 
-          class StubHttpService: PMHttpService {
+          class StubHttpService: PMHTTPService {
 
             func request(_ request: URLRequest, _ response: (Error?, HTTPURLResponse?, Data?) -> Void) {
               let httpURLResponse = HTTPURLResponse(url: URL(string: "http://www.poke.me/oauth/token")!,
@@ -131,7 +131,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
 
       context("on invalid response") {
         it("should call the failed delegate method") {
-          class StubHttpService: PMHttpService {
+          class StubHttpService: PMHTTPService {
 
             func request(_ request: URLRequest, _ response: (Error?, HTTPURLResponse?, Data?) -> Void) {
               let httpURLResponse = HTTPURLResponse(url: URL(string: "http://www.poke.me/oauth/token")!,
