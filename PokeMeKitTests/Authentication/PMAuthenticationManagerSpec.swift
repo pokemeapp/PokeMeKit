@@ -43,7 +43,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
 
           var lastRequest: URLRequest?
 
-          func request(_ request: URLRequest, _ response: (Error?, HTTPURLResponse?, Data?) -> Void) {
+          func request(_ request: URLRequest, _ response: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
             lastRequest = request
           }
 
@@ -92,7 +92,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
 
           class StubHttpService: PMHTTPService {
 
-            func request(_ request: URLRequest, _ response: (Error?, HTTPURLResponse?, Data?) -> Void) {
+            func request(_ request: URLRequest, _ response: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
               let httpURLResponse = HTTPURLResponse(url: URL(string: "http://www.poke.me/oauth/token")!,
                                                     statusCode: 200, httpVersion: nil, headerFields: nil)
               let responseJSON = """
@@ -133,7 +133,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
         it("should call the failed delegate method") {
           class StubHttpService: PMHTTPService {
 
-            func request(_ request: URLRequest, _ response: (Error?, HTTPURLResponse?, Data?) -> Void) {
+            func request(_ request: URLRequest, _ response: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
               let httpURLResponse = HTTPURLResponse(url: URL(string: "http://www.poke.me/oauth/token")!,
                                                     statusCode: 200, httpVersion: nil, headerFields: nil)
               let responseJSON = """

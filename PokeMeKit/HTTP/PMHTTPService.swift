@@ -9,6 +9,6 @@ public protocol PMHTTPService {
   
   typealias PMAPIResponseCallback = (Error?, HTTPURLResponse?, Data?) -> Void
 
-  func request(_ url: URLRequest, _ callback: PMAPIResponseCallback)
+  func request(_ urlRequest: URLRequest, _ callback: @escaping PMAPIResponseCallback)
 
 }

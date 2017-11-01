@@ -26,7 +26,7 @@ class PMAPISpec: QuickSpec {
   
   class MockHttpService: PMHTTPService {
     
-    func request(_ url: URLRequest, _ callback: (Error?, HTTPURLResponse?, Data?) -> Void) {
+    func request(_ url: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
       
     }
 
@@ -68,7 +68,7 @@ class PMAPISpec: QuickSpec {
         
         class ErrorMockHTTPService: PMHTTPService {
           
-          func request(_ url: URLRequest, _ callback: (Error?, HTTPURLResponse?, Data?) -> Void) {
+          func request(_ url: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
             callback(DummyError.dummy, nil, nil)
           }
 
@@ -90,7 +90,7 @@ class PMAPISpec: QuickSpec {
         
         class WrongResponseMockHTTPService: PMHTTPService {
           
-          func request(_ url: URLRequest, _ callback: (Error?, HTTPURLResponse?, Data?) -> Void) {
+          func request(_ url: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
             let response = HTTPURLResponse(url: URL(string: "www.pokeme.com")!, statusCode: 404, httpVersion: nil, headerFields: nil)
             callback(nil, response, nil)
           }
@@ -119,7 +119,7 @@ class PMAPISpec: QuickSpec {
       context("httpService returns a 400 response") {
         class ValidationErrorResponseMockHTTPService: PMHTTPService {
           
-          func request(_ url: URLRequest, _ callback: (Error?, HTTPURLResponse?, Data?) -> Void) {
+          func request(_ url: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
             let response = HTTPURLResponse(url: URL(string: "www.pokeme.com")!, statusCode: 400, httpVersion: nil, headerFields: nil)
             callback(nil, response, nil)
           }
@@ -144,7 +144,7 @@ class PMAPISpec: QuickSpec {
       context("httpService returns a 201 response") {
         class GoodResponseMockHTTPService: PMHTTPService {
           
-          func request(_ url: URLRequest, _ callback: (Error?, HTTPURLResponse?, Data?) -> Void) {
+          func request(_ url: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
             let response = HTTPURLResponse(url: URL(string: "www.pokeme.com")!, statusCode: 201, httpVersion: nil, headerFields: nil)
             callback(nil, response, nil)
           }

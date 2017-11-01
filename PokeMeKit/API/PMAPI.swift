@@ -26,12 +26,12 @@ class PMAPI: PMAPIProtocol {
     self.baseURL = baseURL
   }
   
-  func register(_ user: PMUser, _ callback: PMAPIErrorCallback) {
+  func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
     let request = requestFactory.make(baseURL: baseURL, route: .register, method: .POST, content: user)
 
     httpService.request(request) { error, response, data in
       
-      if let err = error {
+      if let _ = error {
         return callback(error)
       }
       
@@ -53,10 +53,10 @@ class PMAPI: PMAPIProtocol {
     }
   }
   
-  func login(_ user: PMUser, _ callback: PMAPIErrorCallback) {
+  func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
   }
   
-  func getUser(_ callback: PMAPIEntityCallback<PMUser>) {
+  func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>) {
   }
 
 }

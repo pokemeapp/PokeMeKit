@@ -25,10 +25,10 @@ public protocol PMAPIProtocol {
   
   typealias PMAPIEntityCallback<Entity: PMAPIEntity> = (Error?, Entity?) -> Void
   
-  func register(_ user: PMUser, _ callback: PMAPIErrorCallback)
+  func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback)
   
-  func login(_ user: PMUser, _ callback: PMAPIErrorCallback)
+  func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback)
   
-  func getUser(_ callback: PMAPIEntityCallback<PMUser>)
+  func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>)
   
 }

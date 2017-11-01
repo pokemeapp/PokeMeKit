@@ -59,9 +59,9 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
         return
       }
 
-      if let successfulResponse = try? decoder.decode(SuccessfulResponse.self, from: responseData) {
+      if let successfulResponse = try? self.decoder.decode(SuccessfulResponse.self, from: responseData) {
         self.delegate?.authenticationManagerDidAuthenticate(self)
-      } else if let unsuccessfulResponse = try? decoder.decode(UnsuccessfulResponse.self, from: responseData) {
+      } else if let unsuccessfulResponse = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
         self.delegate?.authenticationManagerFailedToAuthenticate(self)
       }
 
