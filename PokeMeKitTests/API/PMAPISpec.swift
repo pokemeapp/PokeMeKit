@@ -34,7 +34,7 @@ class PMAPISpec: QuickSpec {
   
   class MockRequestFactory: PMAPIRequestFactoryProtocol {
     
-    func make(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: PMAPIEntity?) -> URLRequest {
+    func make<Entity>(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: Entity? = nil) -> URLRequest where Entity: PMAPIEntity {
         return URLRequest(url: baseURL)
     }
 

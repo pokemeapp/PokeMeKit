@@ -15,7 +15,7 @@ public enum PMAPIMethod: String {
 
 public protocol PMAPIRequestFactoryProtocol {
 
-  func make(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: PMAPIEntity?) -> URLRequest
+  func make<Entity>(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: Entity?) -> URLRequest where Entity: PMAPIEntity
   
 }
 

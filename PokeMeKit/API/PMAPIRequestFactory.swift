@@ -10,9 +10,17 @@ import Foundation
 
 public class PMAPIRequestFactory: PMAPIRequestFactoryProtocol {
   
-  public func make(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: PMAPIEntity?) -> URLRequest {
+  private let encoder = JSONEncoder()
+  
+  public func make<Entity>(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: Entity? = nil) -> URLRequest where Entity: PMAPIEntity {
     
-    return URLRequest(url: baseURL)
+    let url = baseURL.appendingPathComponent(route.rawValue)
+    var request = URLRequest(url: url)
+    if let entity = content, let entityData = try? encoder.encode(entity) {
+      request.httpBody = entityData
+    }
+    
+    return request
   }
 
 }
