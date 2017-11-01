@@ -10,10 +10,10 @@ import Foundation
 
 public class PMPokePrototype: Codable {
   
-  var id: String?
-  var userId: String
-  var message: String
-  var responses: [String]
+  public var id: String?
+  public var userId: String
+  public var message: String
+  public var responses: [String]
   
   public init(userId: String, message: String, responses: [String]) {
     self.userId = userId
