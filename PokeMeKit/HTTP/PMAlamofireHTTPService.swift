@@ -11,6 +11,10 @@ import Alamofire
 
 public class PMAlamofireHTTPService: PMHTTPService {
   
+  public init() {
+    
+  }
+  
   public func request(_ urlRequest: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
     Alamofire.request(urlRequest).responseData { response in
       

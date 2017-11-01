@@ -12,6 +12,10 @@ public class PMAPIRequestFactory: PMAPIRequestFactoryProtocol {
   
   private let encoder = JSONEncoder()
   
+  public init() {
+    
+  }
+  
   public func make<Entity>(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: Entity? = nil) -> URLRequest where Entity: PMAPIEntity {
     
     let url = baseURL.appendingPathComponent(route.rawValue)
