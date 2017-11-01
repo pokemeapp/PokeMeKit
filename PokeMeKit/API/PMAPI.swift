@@ -14,10 +14,10 @@ public class PMAPI: PMAPIProtocol {
     case register = "api/register"
   }
 
-  let authService: PMAuthenticationManager
-  let httpService: PMHTTPService
-  let requestFactory: PMAPIRequestFactoryProtocol
-  let baseURL: URL
+  private let authService: PMAuthenticationManager
+  private let httpService: PMHTTPService
+  private let requestFactory: PMAPIRequestFactoryProtocol
+  private let baseURL: URL
   
   public init(authService: PMAuthenticationManager, httpService: PMHTTPService, requestFactory: PMAPIRequestFactoryProtocol, baseURL: URL) {
     self.requestFactory = requestFactory
