@@ -24,14 +24,14 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
   private let baseURL: URL
   private let clientId: String
   private let clientSecret: String
-  private let httpService: PMHttpService
+  private let httpService: PMHTTPService
   private let decoder = JSONDecoder()
 
   public weak var delegate: PMAuthenticationManagerDelegate?
 
   private final let tokenEndpoint = "oauth/token"
 
-  init(baseURL: URL, clientId: String, clientSecret: String, httpService: PMHttpService) {
+  public init(baseURL: URL, clientId: String, clientSecret: String, httpService: PMHTTPService) {
     self.baseURL = baseURL
     self.clientId = clientId
     self.clientSecret = clientSecret
@@ -59,9 +59,9 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
         return
       }
 
-      if let successfulResponse = try? decoder.decode(SuccessfulResponse.self, from: responseData) {
+      if let successfulResponse = try? self.decoder.decode(SuccessfulResponse.self, from: responseData) {
         self.delegate?.authenticationManagerDidAuthenticate(self)
-      } else if let unsuccessfulResponse = try? decoder.decode(UnsuccessfulResponse.self, from: responseData) {
+      } else if let unsuccessfulResponse = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
         self.delegate?.authenticationManagerFailedToAuthenticate(self)
       }
 

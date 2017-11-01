@@ -8,20 +8,19 @@
 
 import Foundation
 
-class PMUser: Codable {
+public class PMUser: PMAPIEntity {
   
   var id: String?
-  var username: String
   var email: String
   var firstName: String
   var lastName: String
+  var password: String?
   var pokes: [String] = []
   var localReminders: [String] = []
   var friends: [String] = []
   
-  init(username: String, email: String, firstName: String, lastName: String) {
+  public init(email: String, firstName: String, lastName: String) {
     
-    self.username = username
     self.email = email
     self.firstName = firstName
     self.lastName = lastName
