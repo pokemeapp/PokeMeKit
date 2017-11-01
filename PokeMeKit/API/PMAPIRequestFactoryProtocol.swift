@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum PMAPIMethod: String {
+public enum PMAPIMethod: String {
   case GET = "GET"
   case POST = "POST"
 }
 
-protocol PMAPIRequestFactoryProtocol {
+public protocol PMAPIRequestFactoryProtocol {
 
   func make(baseURL: URL, route: PMAPI.Route, method: PMAPIMethod, content: PMAPIEntity?) -> URLRequest
   

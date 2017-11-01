@@ -8,9 +8,9 @@
 
 import Foundation
 
-class PMAPI: PMAPIProtocol {
+public class PMAPI: PMAPIProtocol {
   
-  enum Route: String {
+  public enum Route: String {
     case register = "api/register"
   }
 
@@ -19,14 +19,14 @@ class PMAPI: PMAPIProtocol {
   let requestFactory: PMAPIRequestFactoryProtocol
   let baseURL: URL
   
-  init(authService: PMAuthenticationManager, httpService: PMHTTPService, requestFactory: PMAPIRequestFactoryProtocol, baseURL: URL) {
+  public init(authService: PMAuthenticationManager, httpService: PMHTTPService, requestFactory: PMAPIRequestFactoryProtocol, baseURL: URL) {
     self.requestFactory = requestFactory
     self.authService = authService
     self.httpService = httpService
     self.baseURL = baseURL
   }
   
-  func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
+  public func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
     let request = requestFactory.make(baseURL: baseURL, route: .register, method: .POST, content: user)
 
     httpService.request(request) { error, response, data in
@@ -53,10 +53,10 @@ class PMAPI: PMAPIProtocol {
     }
   }
   
-  func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
+  public func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
   }
   
-  func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>) {
+  public func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>) {
   }
 
 }

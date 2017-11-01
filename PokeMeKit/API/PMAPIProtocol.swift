@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PMAPIEntity: Codable {
+public protocol PMAPIEntity: Codable {
   
 }
 

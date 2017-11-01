@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-class PMAlamofireHTTPService: PMHTTPService {
+public class PMAlamofireHTTPService: PMHTTPService {
   
-  func request(_ urlRequest: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
+  public func request(_ urlRequest: URLRequest, _ callback: @escaping (Error?, HTTPURLResponse?, Data?) -> Void) {
     Alamofire.request(urlRequest).responseData { response in
       
       callback(response.error, response.response, response.data)

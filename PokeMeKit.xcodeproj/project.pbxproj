@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		281038BB1FA9DC14002CBDE2 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281038BA1FA9DC14002CBDE2 /* OHHTTPStubs.framework */; };
 		281038BC1FA9DC19002CBDE2 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 281038BA1FA9DC14002CBDE2 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		281038BE1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281038BD1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift */; };
+		281038C01FA9EE75002CBDE2 /* PMAPIRequestFactorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281038BF1FA9EE75002CBDE2 /* PMAPIRequestFactorySpec.swift */; };
 		285DF1E11F7127EC0029548A /* PokeMeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285DF1D71F7127EB0029548A /* PokeMeKit.framework */; };
 		285DF1E81F7127EC0029548A /* PokeMeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 285DF1DA1F7127EB0029548A /* PokeMeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		285DF1F31F71534B0029548A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285DF1F21F71534B0029548A /* Nimble.framework */; };
@@ -68,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		281038BA1FA9DC14002CBDE2 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		281038BD1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMAPIRequestFactory.swift; sourceTree = "<group>"; };
+		281038BF1FA9EE75002CBDE2 /* PMAPIRequestFactorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMAPIRequestFactorySpec.swift; sourceTree = "<group>"; };
 		285DF1D71F7127EB0029548A /* PokeMeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PokeMeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		285DF1DA1F7127EB0029548A /* PokeMeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeMeKit.h; sourceTree = "<group>"; };
 		285DF1DB1F7127EB0029548A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				286607D01FA641AE00CEA825 /* PMAPI.swift */,
 				286607D21FA641F300CEA825 /* PMAPIProtocol.swift */,
 				28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */,
+				281038BD1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				2887D6921FA76A9E00698EAF /* PMAPISpec.swift */,
+				281038BF1FA9EE75002CBDE2 /* PMAPIRequestFactorySpec.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			files = (
 				286607D31FA641F300CEA825 /* PMAPIProtocol.swift in Sources */,
 				60464EDB6519B7A252F6F255 /* PMAuthenticationManager.swift in Sources */,
+				281038BE1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift in Sources */,
 				286607D11FA641AE00CEA825 /* PMAPI.swift in Sources */,
 				28B014471FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift in Sources */,
 				2887D6BD1FA9C19E00698EAF /* PMAlamofireHTTPService.swift in Sources */,
@@ -361,6 +368,7 @@
 				2887D6C71FA9CDBF00698EAF /* PMAlamofireHTTPServiceSpec.swift in Sources */,
 				2887D6931FA76A9E00698EAF /* PMAPISpec.swift in Sources */,
 				60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */,
+				281038C01FA9EE75002CBDE2 /* PMAPIRequestFactorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

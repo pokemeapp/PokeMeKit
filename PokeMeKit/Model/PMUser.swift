@@ -19,7 +19,7 @@ public class PMUser: PMAPIEntity {
   var localReminders: [String] = []
   var friends: [String] = []
   
-  init(email: String, firstName: String, lastName: String) {
+  public init(email: String, firstName: String, lastName: String) {
     
     self.email = email
     self.firstName = firstName
