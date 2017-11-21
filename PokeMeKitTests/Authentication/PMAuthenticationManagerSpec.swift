@@ -21,22 +21,6 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
     let passwordGrantTypeData = Data(bytes: [UInt8]("grant_type=password&username=test@testmail.com&password=1234".utf8))
 
     describe("authenticate") {
-      class MockAuthenticationManagerDelegate: PMAuthenticationManagerDelegate {
-
-        var successCalled: Bool? = nil
-        var authenticationManagerPassed: PMAuthenticationManager?
-
-        func authenticationManagerDidAuthenticate(_ authenticationManager: PMAuthenticationManager) {
-          successCalled = true
-          authenticationManagerPassed = authenticationManager
-        }
-
-        func authenticationManagerFailedToAuthenticate(_ authenticationManager: PMAuthenticationManager) {
-          successCalled = false
-          authenticationManagerPassed = authenticationManager
-        }
-
-      }
 
       context("given a username and a password") {
         class MockHttpService: PMHTTPService {
@@ -62,7 +46,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
             httpService: mockHttpService
           )
 
-          sut.authenticate(email: email, password: password)
+          sut.authenticate(email: email, password: password, { _ in })
 
           lastRequest = mockHttpService.lastRequest
         }
@@ -88,7 +72,7 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
       }
 
       context("on valid response") {
-        it("should call the success delegate method") {
+        it("should call the callback with no error") {
 
           class StubHttpService: PMHTTPService {
 
@@ -111,8 +95,6 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
 
           }
 
-          let mockAuthenticationManagerDelegate = MockAuthenticationManagerDelegate()
-
           sut = PMOAuth2AuthenticationManager(
             baseURL: baseURL,
             clientId: clientId,
@@ -120,12 +102,13 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
             httpService: StubHttpService()
           )
 
-          sut.delegate = mockAuthenticationManagerDelegate
-
-          sut.authenticate(email: email, password: password)
-
-          expect(mockAuthenticationManagerDelegate.successCalled).to(beTrue())
-          expect(mockAuthenticationManagerDelegate.authenticationManagerPassed).to(be(sut))
+          waitUntil { done in
+            sut.authenticate(email: email, password: password, { error in
+              expect(error).to(beNil())
+              done()
+            })
+          }
+          
         }
       }
 
@@ -150,8 +133,6 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
 
           }
 
-          let mockAuthenticationManagerDelegate = MockAuthenticationManagerDelegate()
-
           sut = PMOAuth2AuthenticationManager(
             baseURL: baseURL,
             clientId: clientId,
@@ -159,12 +140,17 @@ class PMOAuth2AuthenticationManagerSpec: QuickSpec {
             httpService: StubHttpService()
           )
 
-          sut.delegate = mockAuthenticationManagerDelegate
-
-          sut.authenticate(email: email, password: password)
-
-          expect(mockAuthenticationManagerDelegate.successCalled).to(beFalse())
-          expect(mockAuthenticationManagerDelegate.authenticationManagerPassed).to(be(sut))
+          waitUntil { done in
+            sut.authenticate(email: email, password: password, { error in
+              expect(error).toNot(beNil())
+              
+              guard case .validationUnsuccessful = error! else {
+                fatalError()
+              }
+              
+              done()
+            })
+          }
         }
       }
     }

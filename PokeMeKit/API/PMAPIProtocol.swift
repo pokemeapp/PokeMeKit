@@ -16,7 +16,8 @@ public enum PMAPIError: Error {
   
   case validationUnsuccessful
   case badResponseCode(Int)
-
+  case tokenNotFound
+  
 }
 
 public protocol PMAPIProtocol {
@@ -27,7 +28,7 @@ public protocol PMAPIProtocol {
   
   func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback)
   
-  func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback)
+  func login(with email: String, and password: String , _ callback: @escaping PMAPIErrorCallback)
   
   func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>)
   

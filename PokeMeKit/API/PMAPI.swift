@@ -53,7 +53,8 @@ public class PMAPI: PMAPIProtocol {
     }
   }
   
-  public func login(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
+  public func login(with email: String, and password: String, _ callback: @escaping PMAPIErrorCallback) {
+    authService.authenticate(email: email, password: password, { _ in })
   }
   
   public func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>) {

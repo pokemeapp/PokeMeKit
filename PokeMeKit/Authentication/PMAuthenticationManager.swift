@@ -5,18 +5,10 @@
 
 import Foundation
 
-public protocol PMAuthenticationManagerDelegate: class {
-
-  func authenticationManagerDidAuthenticate(_ authenticationManager: PMAuthenticationManager)
-
-  func authenticationManagerFailedToAuthenticate(_ authenticationManager: PMAuthenticationManager)
-
-}
-
 public protocol PMAuthenticationManager {
 
-  func authenticate(email: String, password: String)
+  func authenticate(email: String, password: String, _ callback: @escaping (PMAPIError?) -> Void)
 
-  func authenticate(request: URLRequest) -> URLRequest
+  func authenticate(request: URLRequest) throws -> URLRequest
 
 }

@@ -27,8 +27,6 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
   private let httpService: PMHTTPService
   private let decoder = JSONDecoder()
 
-  public weak var delegate: PMAuthenticationManagerDelegate?
-
   private final let tokenEndpoint = "oauth/token"
 
   public init(baseURL: URL, clientId: String, clientSecret: String, httpService: PMHTTPService) {
@@ -38,7 +36,7 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     self.httpService = httpService
   }
 
-  public func authenticate(email: String, password: String) {
+  public func authenticate(email: String, password: String, _ callback: @escaping (PMAPIError?) -> Void) {
 
     let tokenEndpointURL = baseURL.appendingPathComponent(tokenEndpoint)
 
@@ -55,21 +53,20 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     httpService.request(request, { error, response, data in
 
       guard let responseData = data else {
-        self.delegate?.authenticationManagerFailedToAuthenticate(self)
         return
       }
 
       if let successfulResponse = try? self.decoder.decode(SuccessfulResponse.self, from: responseData) {
-        self.delegate?.authenticationManagerDidAuthenticate(self)
+        callback(nil)
       } else if let unsuccessfulResponse = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
-        self.delegate?.authenticationManagerFailedToAuthenticate(self)
+        callback(PMAPIError.validationUnsuccessful)
       }
 
     });
 
   }
 
-  public func authenticate(request: URLRequest) -> URLRequest {
+  public func authenticate(request: URLRequest) throws -> URLRequest {
     fatalError("authenticate(request:) has not been implemented")
   }
 

@@ -14,11 +14,11 @@ class PMAPISpec: QuickSpec {
   
   class MockAuthManager: PMAuthenticationManager {
     
-    func authenticate(email: String, password: String) {
+    func authenticate(email: String, password: String, _ callback: @escaping (PMAPIError?) -> Void) {
       
     }
     
-    func authenticate(request: URLRequest) -> URLRequest {
+    func authenticate(request: URLRequest) throws -> URLRequest {
       return request
     }
 
