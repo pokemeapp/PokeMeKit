@@ -1,0 +1,369 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 11,
+      "symbol": "PMAPI",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 13,
+      "symbol": "PMAPI.Route",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 14,
+      "symbol": "PMAPI.Route.register",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 22,
+      "symbol": "PMAPI.init(authService:httpService:requestFactory:baseURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 29,
+      "symbol": "PMAPI.register(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 56,
+      "symbol": "PMAPI.login(with:and:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPI.swift",
+      "line": 60,
+      "symbol": "PMAPI.getUser(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 11,
+      "symbol": "PMAPIEntity",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 15,
+      "symbol": "PMAPIError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 17,
+      "symbol": "PMAPIError.validationUnsuccessful",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 18,
+      "symbol": "PMAPIError.badResponseCode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 19,
+      "symbol": "PMAPIError.tokenNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 23,
+      "symbol": "PMAPIProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 29,
+      "symbol": "PMAPIProtocol.register(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 31,
+      "symbol": "PMAPIProtocol.login(with:and:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIProtocol.swift",
+      "line": 33,
+      "symbol": "PMAPIProtocol.getUser(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactory.swift",
+      "line": 11,
+      "symbol": "PMAPIRequestFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactory.swift",
+      "line": 15,
+      "symbol": "PMAPIRequestFactory.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactory.swift",
+      "line": 19,
+      "symbol": "PMAPIRequestFactory.make(baseURL:route:method:content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactoryProtocol.swift",
+      "line": 11,
+      "symbol": "PMAPIMethod",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactoryProtocol.swift",
+      "line": 12,
+      "symbol": "PMAPIMethod.GET",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactoryProtocol.swift",
+      "line": 13,
+      "symbol": "PMAPIMethod.POST",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactoryProtocol.swift",
+      "line": 16,
+      "symbol": "PMAPIRequestFactoryProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/API/PMAPIRequestFactoryProtocol.swift",
+      "line": 18,
+      "symbol": "PMAPIRequestFactoryProtocol.make(baseURL:route:method:content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMAuthenticationManager.swift",
+      "line": 8,
+      "symbol": "PMAuthenticationManager",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMAuthenticationManager.swift",
+      "line": 10,
+      "symbol": "PMAuthenticationManager.authenticate(email:password:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMAuthenticationManager.swift",
+      "line": 12,
+      "symbol": "PMAuthenticationManager.authenticate(request:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMOAuth2AuthenticationManager.swift",
+      "line": 8,
+      "symbol": "PMOAuth2AuthenticationManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMOAuth2AuthenticationManager.swift",
+      "line": 32,
+      "symbol": "PMOAuth2AuthenticationManager.init(baseURL:clientId:clientSecret:httpService:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMOAuth2AuthenticationManager.swift",
+      "line": 39,
+      "symbol": "PMOAuth2AuthenticationManager.authenticate(email:password:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Authentication/PMOAuth2AuthenticationManager.swift",
+      "line": 69,
+      "symbol": "PMOAuth2AuthenticationManager.authenticate(request:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/HTTP/PMAlamofireHTTPService.swift",
+      "line": 12,
+      "symbol": "PMAlamofireHTTPService",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/HTTP/PMAlamofireHTTPService.swift",
+      "line": 14,
+      "symbol": "PMAlamofireHTTPService.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/HTTP/PMAlamofireHTTPService.swift",
+      "line": 18,
+      "symbol": "PMAlamofireHTTPService.request(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/HTTP/PMHTTPService.swift",
+      "line": 8,
+      "symbol": "PMHTTPService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/HTTP/PMHTTPService.swift",
+      "line": 12,
+      "symbol": "PMHTTPService.request(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 11,
+      "symbol": "PMPokePrototype",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 13,
+      "symbol": "PMPokePrototype.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 14,
+      "symbol": "PMPokePrototype.userId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 15,
+      "symbol": "PMPokePrototype.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 16,
+      "symbol": "PMPokePrototype.responses",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMPokePrototype.swift",
+      "line": 18,
+      "symbol": "PMPokePrototype.init(userId:message:responses:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 11,
+      "symbol": "PMUser",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 13,
+      "symbol": "PMUser.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 14,
+      "symbol": "PMUser.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 15,
+      "symbol": "PMUser.firstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 16,
+      "symbol": "PMUser.lastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 17,
+      "symbol": "PMUser.password",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 18,
+      "symbol": "PMUser.pokes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 19,
+      "symbol": "PMUser.localReminders",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 20,
+      "symbol": "PMUser.friends",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/simkoviktor/iOSDev/PokeMeKit/PokeMeKit/Model/PMUser.swift",
+      "line": 22,
+      "symbol": "PMUser.init(email:firstName:lastName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/simkoviktor/iOSDev/PokeMeKit"
+}
