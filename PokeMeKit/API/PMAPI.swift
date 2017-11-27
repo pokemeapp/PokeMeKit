@@ -9,7 +9,7 @@
 import Foundation
 
 public class PMAPI: PMAPIProtocol {
-  
+
   public enum Route: String {
     case register = "api/register"
   }
@@ -54,10 +54,19 @@ public class PMAPI: PMAPIProtocol {
   }
   
   public func login(with email: String, and password: String, _ callback: @escaping PMAPIErrorCallback) {
-    authService.authenticate(email: email, password: password, { _ in })
+    authService.authenticate(email: email, password: password, callback)
   }
   
-  public func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>) {
+  public func get<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    
+  }
+  
+  public func post<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    
+  }
+  
+  public func patch<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    
   }
 
 }

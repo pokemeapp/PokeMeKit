@@ -30,6 +30,10 @@ public protocol PMAPIProtocol {
   
   func login(with email: String, and password: String , _ callback: @escaping PMAPIErrorCallback)
   
-  func getUser(_ callback: @escaping PMAPIEntityCallback<PMUser>)
+  func get<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
+  
+  func post<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
+  
+  func patch<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
   
 }
