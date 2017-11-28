@@ -29,6 +29,13 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
 
   private final let tokenEndpoint = "oauth/token"
 
+  private var accessToken: String? = nil
+  private var refreshToken: String? = nil
+    
+  public var isLoggedIn: Bool {
+    return refreshToken != nil
+  }
+
   public init(baseURL: URL, clientId: String, clientSecret: String, httpService: PMHTTPService) {
     self.baseURL = baseURL
     self.clientId = clientId
@@ -36,7 +43,7 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     self.httpService = httpService
   }
 
-  public func authenticate(email: String, password: String, _ callback: @escaping (PMAPIError?) -> Void) {
+  public func authenticate(email: String, password: String, _ callback: @escaping (Error?) -> Void) {
 
     let tokenEndpointURL = baseURL.appendingPathComponent(tokenEndpoint)
 
@@ -51,12 +58,17 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     request.addValue("Basic \(base64credentials)", forHTTPHeaderField: "Authorization")
 
     httpService.request(request, { error, response, data in
+      guard error == nil else {
+        return callback(error)
+      }
 
       guard let responseData = data else {
         return
       }
 
       if let successfulResponse = try? self.decoder.decode(SuccessfulResponse.self, from: responseData) {
+        self.accessToken = successfulResponse.access_token
+        self.refreshToken = successfulResponse.refresh_token
         callback(nil)
       } else if let unsuccessfulResponse = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
         callback(PMAPIError.validationUnsuccessful)

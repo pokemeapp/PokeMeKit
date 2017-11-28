@@ -6,8 +6,10 @@
 import Foundation
 
 public protocol PMAuthenticationManager {
+  
+  var isLoggedIn: Bool {get}
 
-  func authenticate(email: String, password: String, _ callback: @escaping (PMAPIError?) -> Void)
+  func authenticate(email: String, password: String, _ callback: @escaping (Error?) -> Void)
 
   func authenticate(request: URLRequest) throws -> URLRequest
 

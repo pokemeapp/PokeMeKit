@@ -18,6 +18,10 @@ public class PMAPI: PMAPIProtocol {
   private let httpService: PMHTTPService
   private let requestFactory: PMAPIRequestFactoryProtocol
   private let baseURL: URL
+    
+  public var isLoggedIn: Bool {
+    return authService.isLoggedIn
+  }
   
   public init(authService: PMAuthenticationManager, httpService: PMHTTPService, requestFactory: PMAPIRequestFactoryProtocol, baseURL: URL) {
     self.requestFactory = requestFactory

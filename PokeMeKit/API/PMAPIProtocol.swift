@@ -25,6 +25,8 @@ public protocol PMAPIProtocol {
   typealias PMAPIErrorCallback = (Error?) -> Void
   
   typealias PMAPIEntityCallback<Entity: PMAPIEntity> = (Error?, Entity?) -> Void
+    
+  var isLoggedIn: Bool {get}
   
   func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback)
   
