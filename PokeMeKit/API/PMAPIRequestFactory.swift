@@ -24,6 +24,9 @@ public class PMAPIRequestFactory: PMAPIRequestFactoryProtocol {
       request.httpBody = entityData
     }
     
+    request.httpMethod = method.rawValue
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
     return request
   }
 

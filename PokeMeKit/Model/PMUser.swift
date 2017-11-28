@@ -12,18 +12,18 @@ public class PMUser: PMAPIEntity {
   
   public var id: String?
   public var email: String
-  public var firstName: String
-  public var lastName: String
+  public var firstname: String
+  public var lastname: String
   public var password: String?
   public var pokes: [String] = []
   public var localReminders: [String] = []
   public var friends: [String] = []
   
-  public init(email: String, firstName: String, lastName: String) {
+  public init(email: String, firstname: String, lastname: String) {
     
     self.email = email
-    self.firstName = firstName
-    self.lastName = lastName
+    self.firstname = firstname
+    self.lastname = lastname
     
   }
   
