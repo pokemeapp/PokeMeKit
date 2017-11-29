@@ -127,6 +127,7 @@
 				60464E41AB4F9E4A833A30CB /* Cartfile */,
 				285DF1F11F71534B0029548A /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
 		};
 		285DF1D81F7127EB0029548A /* Products */ = {

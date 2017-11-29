@@ -29,8 +29,19 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
 
   private final let tokenEndpoint = "oauth/token"
 
-  private var accessToken: String? = nil
-  private var refreshToken: String? = nil
+  private let accessTokenKey = "PokeMe.AccessToken"
+  private var accessToken: String? = nil {
+    didSet {
+      UserDefaults.standard.set(accessToken, forKey: accessTokenKey)
+    }
+  }
+  
+  private let refreshTokenKey = "PokeMe.RefreshToken"
+  private var refreshToken: String? = nil {
+    didSet {
+      UserDefaults.standard.set(accessToken, forKey: refreshTokenKey)
+    }
+  }
     
   public var isLoggedIn: Bool {
     return refreshToken != nil
@@ -41,6 +52,14 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     self.clientId = clientId
     self.clientSecret = clientSecret
     self.httpService = httpService
+    
+    if let accessToken = UserDefaults.standard.string(forKey: accessTokenKey) {
+      self.accessToken = accessToken
+    }
+    
+    if let refreshToken = UserDefaults.standard.string(forKey: refreshTokenKey) {
+      self.refreshToken = refreshToken
+    }
   }
 
   public func authenticate(email: String, password: String, _ callback: @escaping (Error?) -> Void) {
