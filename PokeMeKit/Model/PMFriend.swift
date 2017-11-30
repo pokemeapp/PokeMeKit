@@ -15,4 +15,10 @@ public class PMFriend: PMAPIEntity {
   public var friendId: Int
   public var owner: PMUser?
   
+  private enum CodingKeys: String, CodingKey {
+    
+    case id, userId = "user_id", friendId = "friend_id", owner
+    
+  }
+  
 }

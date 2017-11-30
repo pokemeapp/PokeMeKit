@@ -28,6 +28,8 @@
 		28B014471FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */; };
 		28C41A761F8D26DC0083DE71 /* PMPokePrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */; };
 		28EEB7EF1FD0953700AE6080 /* PMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB7EE1FD0953700AE6080 /* PMFriend.swift */; };
+		28EEB7F31FD0A01700AE6080 /* friends.json in Resources */ = {isa = PBXBuildFile; fileRef = 28EEB7F21FD0A01700AE6080 /* friends.json */; };
+		28EEB7F41FD0A11100AE6080 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 281038BA1FA9DC14002CBDE2 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */; };
 		604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */; };
 		6046488B73308322820E7005 /* PMHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046463E241F7E19C7E52611 /* PMHTTPService.swift */; };
@@ -63,6 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				28EEB7F41FD0A11100AE6080 /* OHHTTPStubs.framework in CopyFiles */,
 				2887D6C41FA9C56D00698EAF /* Alamofire.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +93,7 @@
 		28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMAPIRequestFactoryProtocol.swift; sourceTree = "<group>"; };
 		28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMPokePrototype.swift; sourceTree = "<group>"; };
 		28EEB7EE1FD0953700AE6080 /* PMFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMFriend.swift; sourceTree = "<group>"; };
+		28EEB7F21FD0A01700AE6080 /* friends.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = friends.json; sourceTree = "<group>"; };
 		604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAuthenticationManagerSpec.swift; sourceTree = "<group>"; };
 		6046463E241F7E19C7E52611 /* PMHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMHTTPService.swift; sourceTree = "<group>"; };
 		604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMOAuth2AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		285DF1D91F7127EB0029548A /* PokeMeKit */ = {
 			isa = PBXGroup;
 			children = (
+				28EEB7F11FD09FDE00AE6080 /* Fixtures */,
 				2887D6BB1FA9C07900698EAF /* HTTP */,
 				286607CF1FA640CF00CEA825 /* API */,
 				285DF1DA1F7127EB0029548A /* PokeMeKit.h */,
@@ -238,6 +243,14 @@
 				28EEB7EE1FD0953700AE6080 /* PMFriend.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		28EEB7F11FD09FDE00AE6080 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				28EEB7F21FD0A01700AE6080 /* friends.json */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EEB7F31FD0A01700AE6080 /* friends.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
