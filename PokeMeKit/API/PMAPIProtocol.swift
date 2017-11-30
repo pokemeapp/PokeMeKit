@@ -17,6 +17,8 @@ public enum PMAPIError: Error {
   case validationUnsuccessful
   case badResponseCode(Int)
   case tokenNotFound
+  case noData
+  case entityTypeMismatch
   
 }
 
@@ -25,6 +27,8 @@ public protocol PMAPIProtocol {
   typealias PMAPIErrorCallback = (Error?) -> Void
   
   typealias PMAPIEntityCallback<Entity: PMAPIEntity> = (Error?, Entity?) -> Void
+  
+  typealias PMAPIEntitiesCallback<Entity: PMAPIEntity> = (Error?, [Entity]?) -> Void
     
   var isLoggedIn: Bool {get}
   
@@ -32,10 +36,12 @@ public protocol PMAPIProtocol {
   
   func login(with email: String, and password: String , _ callback: @escaping PMAPIErrorCallback)
   
-  func get<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
+  func get<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntityCallback<E>)
   
-  func post<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
+  func get<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntitiesCallback<E>)
   
-  func patch<E: PMAPIEntity>(_ callback: @escaping PMAPIEntityCallback<E>)
+  func post<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntityCallback<E>)
+  
+  func patch<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntityCallback<E>)
   
 }

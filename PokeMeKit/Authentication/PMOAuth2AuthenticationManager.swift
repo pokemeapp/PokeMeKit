@@ -89,7 +89,7 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
         self.accessToken = successfulResponse.access_token
         self.refreshToken = successfulResponse.refresh_token
         callback(nil)
-      } else if let unsuccessfulResponse = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
+      } else if let _ = try? self.decoder.decode(UnsuccessfulResponse.self, from: responseData) {
         callback(PMAPIError.validationUnsuccessful)
       }
 
@@ -98,7 +98,13 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
   }
 
   public func authenticate(request: URLRequest) throws -> URLRequest {
-    fatalError("authenticate(request:) has not been implemented")
+    if accessToken == nil {
+      throw PMAPIError.tokenNotFound
+    }
+
+    var authorizedRequest = request
+    authorizedRequest.setValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
+    return authorizedRequest
   }
 
   private func passwordCredentialRequestBody(with email: String, and password: String) -> Data? {

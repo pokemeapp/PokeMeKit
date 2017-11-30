@@ -18,6 +18,7 @@ public class PMAPI: PMAPIProtocol {
   private let httpService: PMHTTPService
   private let requestFactory: PMAPIRequestFactoryProtocol
   private let baseURL: URL
+  private let decoder = JSONDecoder()
     
   public var isLoggedIn: Bool {
     return authService.isLoggedIn
@@ -31,11 +32,11 @@ public class PMAPI: PMAPIProtocol {
   }
   
   public func register(_ user: PMUser, _ callback: @escaping PMAPIErrorCallback) {
-    let request = requestFactory.make(baseURL: baseURL, route: .register, method: .POST, content: user)
+    let request = requestFactory.make(baseURL: baseURL, route: Route.register.rawValue, method: .POST, content: user)
 
     httpService.request(request) { error, response, data in
       
-      if let _ = error {
+      guard error == nil else {
         return callback(error)
       }
       
@@ -61,16 +62,156 @@ public class PMAPI: PMAPIProtocol {
     authService.authenticate(email: email, password: password, callback)
   }
   
-  public func get<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+  public func get<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
     
+    request = try! authService.authenticate(request: request)
+    
+    httpService.request(request) { error, response, data in
+      guard error == nil else {
+        return callback(error, nil)
+      }
+      
+      guard let res = response else {
+        // TODO
+        fatalError("No response")
+      }
+      
+      guard res.statusCode == 200 else {
+        
+        if res.statusCode == 400 {
+          return callback(PMAPIError.validationUnsuccessful, nil)
+        }
+        
+        return callback(PMAPIError.badResponseCode(res.statusCode), nil)
+      }
+  
+      guard let data = data else {
+        return callback(PMAPIError.noData, nil)
+      }
+      
+      guard let entity = try? self.decoder.decode(E.self, from: data) else {
+        return callback(PMAPIError.entityTypeMismatch, nil)
+      }
+      
+      callback(nil, entity)
+    }
   }
   
-  public func post<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+  public func get<E>(_ route: String, _ callback: @escaping (Error?, [E]?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
+
+    request = try! authService.authenticate(request: request)
     
+    httpService.request(request) { error, response, data in
+      guard error == nil else {
+        return callback(error, nil)
+      }
+
+      guard let res = response else {
+        // TODO
+        fatalError("No response")
+      }
+
+      guard res.statusCode == 200 else {
+
+        if res.statusCode == 400 {
+          return callback(PMAPIError.validationUnsuccessful, nil)
+        }
+
+        return callback(PMAPIError.badResponseCode(res.statusCode), nil)
+      }
+
+      guard let data = data else {
+        return callback(PMAPIError.noData, nil)
+      }
+
+      guard let entity = try? self.decoder.decode([E].self, from: data) else {
+        return callback(PMAPIError.entityTypeMismatch, nil)
+      }
+
+      callback(nil, entity)
+    }
   }
   
-  public func patch<E>(_ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+  public func post<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
     
+    request = try! authService.authenticate(request: request)
+    
+    httpService.request(request) { error, response, data in
+      guard error == nil else {
+        return callback(error, nil)
+      }
+      
+      guard let res = response else {
+        // TODO
+        fatalError("No response")
+      }
+      
+      guard res.statusCode == 200 else {
+        
+        if res.statusCode == 400 {
+          return callback(PMAPIError.validationUnsuccessful, nil)
+        }
+        
+        if res.statusCode == 204 {
+          return callback(nil, nil)
+        }
+        
+        return callback(PMAPIError.badResponseCode(res.statusCode), nil)
+      }
+      
+      guard let data = data else {
+        return callback(PMAPIError.noData, nil)
+      }
+      
+      guard let entity = try? self.decoder.decode(E.self, from: data) else {
+        return callback(PMAPIError.entityTypeMismatch, nil)
+      }
+      
+      callback(nil, entity)
+    }
+  }
+  
+  public func patch<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
+    
+    request = try! authService.authenticate(request: request)
+    
+    httpService.request(request) { error, response, data in
+      guard error == nil else {
+        return callback(error, nil)
+      }
+      
+      guard let res = response else {
+        // TODO
+        fatalError("No response")
+      }
+      
+      guard res.statusCode == 200 else {
+        
+        if res.statusCode == 400 {
+          return callback(PMAPIError.validationUnsuccessful, nil)
+        }
+        
+        if res.statusCode == 204 {
+          return callback(nil, nil)
+        }
+        
+        return callback(PMAPIError.badResponseCode(res.statusCode), nil)
+      }
+      
+      guard let data = data else {
+        return callback(PMAPIError.noData, nil)
+      }
+      
+      guard let entity = try? self.decoder.decode(E.self, from: data) else {
+        return callback(PMAPIError.entityTypeMismatch, nil)
+      }
+      
+      callback(nil, entity)
+    }
   }
 
 }

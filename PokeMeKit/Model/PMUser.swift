@@ -10,14 +10,14 @@ import Foundation
 
 public class PMUser: PMAPIEntity {
   
-  public var id: String?
+  public var id: Int?
   public var email: String
   public var firstname: String
   public var lastname: String
   public var password: String?
-  public var pokes: [String] = []
-  public var localReminders: [String] = []
-  public var friends: [String] = []
+  public var pokes: [String]? = []
+  public var localReminders: [String]? = []
+  public var friends: [String]? = []
   
   public init(email: String, firstname: String, lastname: String) {
     
