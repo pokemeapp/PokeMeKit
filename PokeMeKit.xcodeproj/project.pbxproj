@@ -27,6 +27,7 @@
 		28A835261F7C45A900138ECC /* PMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A835251F7C45A900138ECC /* PMUser.swift */; };
 		28B014471FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */; };
 		28C41A761F8D26DC0083DE71 /* PMPokePrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */; };
+		28EEB7EF1FD0953700AE6080 /* PMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB7EE1FD0953700AE6080 /* PMFriend.swift */; };
 		60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */; };
 		604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */; };
 		6046488B73308322820E7005 /* PMHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046463E241F7E19C7E52611 /* PMHTTPService.swift */; };
@@ -88,6 +89,7 @@
 		28A835251F7C45A900138ECC /* PMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMUser.swift; sourceTree = "<group>"; };
 		28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMAPIRequestFactoryProtocol.swift; sourceTree = "<group>"; };
 		28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMPokePrototype.swift; sourceTree = "<group>"; };
+		28EEB7EE1FD0953700AE6080 /* PMFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMFriend.swift; sourceTree = "<group>"; };
 		604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAuthenticationManagerSpec.swift; sourceTree = "<group>"; };
 		6046463E241F7E19C7E52611 /* PMHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMHTTPService.swift; sourceTree = "<group>"; };
 		604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMOAuth2AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				28A835251F7C45A900138ECC /* PMUser.swift */,
 				28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */,
+				28EEB7EE1FD0953700AE6080 /* PMFriend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EEB7EF1FD0953700AE6080 /* PMFriend.swift in Sources */,
 				286607D31FA641F300CEA825 /* PMAPIProtocol.swift in Sources */,
 				60464EDB6519B7A252F6F255 /* PMAuthenticationManager.swift in Sources */,
 				281038BE1FA9EDEA002CBDE2 /* PMAPIRequestFactory.swift in Sources */,
