@@ -62,6 +62,10 @@ public class PMAPI: PMAPIProtocol {
     authService.authenticate(email: email, password: password, callback)
   }
   
+  public func logout() {
+    authService.logout()
+  }
+  
   public func get<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
     var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
     

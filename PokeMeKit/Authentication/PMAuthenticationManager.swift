@@ -12,5 +12,7 @@ public protocol PMAuthenticationManager {
   func authenticate(email: String, password: String, _ callback: @escaping (Error?) -> Void)
 
   func authenticate(request: URLRequest) throws -> URLRequest
+  
+  func logout()
 
 }

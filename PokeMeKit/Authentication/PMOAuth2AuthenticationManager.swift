@@ -106,6 +106,13 @@ public class PMOAuth2AuthenticationManager: PMAuthenticationManager {
     authorizedRequest.setValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
     return authorizedRequest
   }
+  
+  public func logout() {
+    UserDefaults.standard.set(nil, forKey: accessTokenKey)
+    UserDefaults.standard.set(nil, forKey: refreshTokenKey)
+    accessToken = nil
+    refreshToken = nil
+  }
 
   private func passwordCredentialRequestBody(with email: String, and password: String) -> Data? {
     var urlComponents = URLComponents()
