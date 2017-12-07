@@ -138,8 +138,8 @@ public class PMAPI: PMAPIProtocol {
     }
   }
   
-  public func post<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
-    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
+  public func post<E>(_ route: String, entity: E, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.POST, content: entity)
     
     request = try! authService.authenticate(request: request)
     
@@ -178,8 +178,8 @@ public class PMAPI: PMAPIProtocol {
     }
   }
   
-  public func patch<E>(_ route: String, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
-    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.GET, content: Optional<E>.none)
+  public func put<E>(_ route: String, entity: E, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.PUT, content: entity)
     
     request = try! authService.authenticate(request: request)
     
