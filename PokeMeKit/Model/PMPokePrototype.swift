@@ -8,17 +8,16 @@
 
 import Foundation
 
-public class PMPokePrototype: Codable {
+public class PMPokePrototype: PMAPIEntity {
   
-  public var id: String?
-  public var userId: String
+  public var id: Int?
+  public var owner_id: Int?
+  public var name: String
   public var message: String
-  public var responses: [String]
-  
-  public init(userId: String, message: String, responses: [String]) {
-    self.userId = userId
+
+  public init(name: String, message: String) {
+    self.name = name
     self.message = message
-    self.responses = responses
   }
   
 }

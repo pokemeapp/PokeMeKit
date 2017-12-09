@@ -216,6 +216,47 @@ public class PMAPI: PMAPIProtocol {
       
       callback(nil, entity)
     }
+
   }
 
+  public func delete<E>(_ route: String, entity: E, _ callback: @escaping (Error?, E?) -> Void) where E : PMAPIEntity {
+    var request = requestFactory.make(baseURL: baseURL, route: route, method: PMAPIMethod.DELETE, content: entity)
+
+    request = try! authService.authenticate(request: request)
+
+    httpService.request(request) { error, response, data in
+      guard error == nil else {
+        return callback(error, nil)
+      }
+
+      guard let res = response else {
+        // TODO
+        fatalError("No response")
+      }
+
+      guard res.statusCode == 200 else {
+
+        if res.statusCode == 400 {
+          return callback(PMAPIError.validationUnsuccessful, nil)
+        }
+
+        if res.statusCode == 204 {
+          return callback(nil, nil)
+        }
+
+        return callback(PMAPIError.badResponseCode(res.statusCode), nil)
+      }
+
+      guard let data = data else {
+        return callback(PMAPIError.noData, nil)
+      }
+
+      guard let entity = try? self.decoder.decode(E.self, from: data) else {
+        return callback(PMAPIError.entityTypeMismatch, nil)
+      }
+
+      callback(nil, entity)
+    }
+
+  }
 }

@@ -43,5 +43,7 @@ public protocol PMAPIProtocol {
   func post<E: PMAPIEntity>(_ route: String, entity: E, _ callback: @escaping PMAPIEntityCallback<E>)
   
   func put<E: PMAPIEntity>(_ route: String, entity: E, _ callback: @escaping PMAPIEntityCallback<E>)
-  
+
+  func delete<E: PMAPIEntity>(_ route: String, entity: E, _ callback: @escaping PMAPIEntityCallback<E>)
+
 }
