@@ -169,6 +169,10 @@ public class PMAPI: PMAPIProtocol {
       guard let data = data else {
         return callback(PMAPIError.noData, nil)
       }
+
+      if (entity is String) {
+        return callback(nil, String(data: data, encoding: .utf8) as? E)
+      }
       
       guard let entity = try? self.decoder.decode(E.self, from: data) else {
         return callback(PMAPIError.entityTypeMismatch, nil)

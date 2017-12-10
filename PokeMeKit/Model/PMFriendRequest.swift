@@ -7,6 +7,8 @@ import Foundation
 
 public class PMFriendRequest: PMAPIEntity {
 
+  public init() {}
+
   public var id: Int?
   public var owner_id: Int?
   public var target_id: Int?

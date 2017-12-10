@@ -12,6 +12,10 @@ public protocol PMAPIEntity: Codable {
   
 }
 
+extension String: PMAPIEntity {
+
+}
+
 public enum PMAPIError: Error {
   
   case validationUnsuccessful
