@@ -11,7 +11,7 @@ import Foundation
 public class PMUser: PMAPIEntity {
   
   public var id: Int?
-  public var email: String
+  public var email: String?
   public var firstname: String
   public var lastname: String
   public var password: String?

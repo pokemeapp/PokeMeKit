@@ -38,7 +38,7 @@ public protocol PMAPIProtocol {
   
   func get<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntityCallback<E>)
   
-  func get<E: PMAPIEntity>(_ route: String, _ callback: @escaping PMAPIEntitiesCallback<E>)
+  func get<E: PMAPIEntity>(_ route: String, query: [String: String]?, _ callback: @escaping PMAPIEntitiesCallback<E>)
   
   func post<E: PMAPIEntity>(_ route: String, entity: E, _ callback: @escaping PMAPIEntityCallback<E>)
   
