@@ -28,8 +28,6 @@
 		28B014471FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B014461FA70A07005C83A8 /* PMAPIRequestFactoryProtocol.swift */; };
 		28C41A761F8D26DC0083DE71 /* PMPokePrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C41A751F8D26DC0083DE71 /* PMPokePrototype.swift */; };
 		28EEB7EF1FD0953700AE6080 /* PMFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB7EE1FD0953700AE6080 /* PMFriend.swift */; };
-		28EEB7F31FD0A01700AE6080 /* friends.json in Resources */ = {isa = PBXBuildFile; fileRef = 28EEB7F21FD0A01700AE6080 /* friends.json */; };
-		28EEB7F41FD0A11100AE6080 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 281038BA1FA9DC14002CBDE2 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60464082D5E89701A16EACB3 /* PMAuthenticationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604642AACB8046FDCC11A965 /* PMAuthenticationManagerSpec.swift */; };
 		604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */; };
 		604647D5286F1C80F39D936F /* PMFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046488C574D56C15DE71550 /* PMFriendRequest.swift */; };
@@ -67,7 +65,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				28EEB7F41FD0A11100AE6080 /* OHHTTPStubs.framework in CopyFiles */,
 				2887D6C41FA9C56D00698EAF /* Alamofire.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +351,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28EEB7F31FD0A01700AE6080 /* friends.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
