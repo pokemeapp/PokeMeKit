@@ -32,6 +32,7 @@
 		604640859EDCD03A688CA038 /* PMOAuth2AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */; };
 		604647D5286F1C80F39D936F /* PMFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046488C574D56C15DE71550 /* PMFriendRequest.swift */; };
 		6046488B73308322820E7005 /* PMHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046463E241F7E19C7E52611 /* PMHTTPService.swift */; };
+		604649FF75389B16EBE83635 /* PMPoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60464A65CCB1751B52479D23 /* PMPoke.swift */; };
 		60464C37064C11CE1CFB5FF8 /* PMHabit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60464548BE031A0E6BD08B44 /* PMHabit.swift */; };
 		60464EDB6519B7A252F6F255 /* PMAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60464ED8D99E261B2C6EE18A /* PMAuthenticationManager.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		6046463E241F7E19C7E52611 /* PMHTTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMHTTPService.swift; sourceTree = "<group>"; };
 		604646752580ED90CFF1258A /* PMOAuth2AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMOAuth2AuthenticationManager.swift; sourceTree = "<group>"; };
 		6046488C574D56C15DE71550 /* PMFriendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMFriendRequest.swift; sourceTree = "<group>"; };
+		60464A65CCB1751B52479D23 /* PMPoke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMPoke.swift; sourceTree = "<group>"; };
 		60464E41AB4F9E4A833A30CB /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		60464ED8D99E261B2C6EE18A /* PMAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,6 +246,7 @@
 				28EEB7EE1FD0953700AE6080 /* PMFriend.swift */,
 				6046488C574D56C15DE71550 /* PMFriendRequest.swift */,
 				60464548BE031A0E6BD08B44 /* PMHabit.swift */,
+				60464A65CCB1751B52479D23 /* PMPoke.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				28A835261F7C45A900138ECC /* PMUser.swift in Sources */,
 				604647D5286F1C80F39D936F /* PMFriendRequest.swift in Sources */,
 				60464C37064C11CE1CFB5FF8 /* PMHabit.swift in Sources */,
+				604649FF75389B16EBE83635 /* PMPoke.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
