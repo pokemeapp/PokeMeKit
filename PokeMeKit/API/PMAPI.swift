@@ -175,7 +175,7 @@ public class PMAPI: PMAPIProtocol {
       }
       
       guard let entity = try? self.decoder.decode(E.self, from: data) else {
-        return callback(PMAPIError.entityTypeMismatch, nil)
+        return callback(nil, nil)
       }
       
       callback(nil, entity)
